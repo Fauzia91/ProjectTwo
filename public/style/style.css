@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Exo 2", sans-serif;
+  background-color: #CCC5B9;
+}
+
+.accent {
+  color: #EB5E28;
+}
+
+.grad {
+  font-size: 40px;
+  background-image: linear-gradient(to bottom right, #e5de46, #c54e0a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media only screen and (max-width: 700px) {
+  .grad {
+    font-size: 40px;
+  }
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.date {
+  text-align: center;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+@media only screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+.left {
+  padding: 40px;
+  width: 60%;
+  background-color: #403D39;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 700px) {
+  .left {
+    width: 100%;
+    padding: 15px 15px;
+  }
+}
+.left .centerBox {
+  width: 600px;
+  height: 90%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /*makes center, this needs flex*/
+}
+@media only screen and (max-width: 700px) {
+  .left .centerBox {
+    width: 100%;
+    height: auto;
+  }
+}
+.left fieldset {
+  border: none;
+  padding: 0px;
+  display: flex;
+  height: 40px;
+}
+.left #addTodoList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.left #addTodoList input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+}
+.left #addTodoList {
+  width: 100%;
+}
+.left #addTodoList input[type=text] {
+  border: none;
+}
+.left #addTodoList input[type=submit] {
+  background: #EB5E28;
+  border: none;
+  cursor: pointer;
+  color: #eee;
+  max-width: 100px;
+  margin: 0 auto;
+}
+.left #addTodoList input[type=submit]:hover {
+  transition: all 0.2s ease-in-out;
+  background-color: #eee;
+  color: #EB5E28;
+}
+
+.right {
+  width: 40%;
+  height: 100%;
+  background-color: #CCC5B9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /*makes center, this needs flex*/
+  overflow-y: scroll;
+}
+@media only screen and (max-width: 700px) {
+  .right {
+    width: 100%;
+    height: auto;
+  }
+}
+.right #output {
+  padding: 20px;
+}
+.right #output fieldset {
+  display: flex;
+  border: none;
+  justify-content: space-between;
+}
+.right #output img {
+  width: 15px;
+  margin-left: 10px;
+}
+
+#output {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.box {
+  border: solid 1px gray;
+  padding: 15px 20px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Exo 2", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.box h4 {
+  margin: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box h4 .circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  border: solid 1px red;
+  background-color: transparent;
+}
+.box.complete .circle {
+  border: solid 1px transparent;
+  background-image: linear-gradient(to right, #55ab55, #3ab73a);
+}
+.box .controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.box .controls img {
+  cursor: pointer;
+  mix-blend-mode: darken;
+}
+.box form {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.box form input {
+  padding: 5px;
+  border: solid 1px gray;
+  border-radius: 4px;
+  display: block;
+}
+
+#week {
+  display: flex;
+  margin: 0 auto;
+}
+#week > div {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 10px;
+  align-items: center;
+}
+#week > div h4 {
+  margin: 0px;
+}
+#week > div p {
+  margin: 0px;
+  margin-bottom: 6px;
+}
+#week > div .circle-red {
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  border: solid 1px red;
+  background-color: transparent;
+}
+#week > div .circle-green {
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  border: solid 1px lawngreen;
+  background-color: green;
+}
+#week > div:nth-child(1), #week > div:nth-child(7) {
+  font-size: 12px;
+}
+#week > div:nth-child(2), #week > div:nth-child(6) {
+  font-size: 16px;
+}
+#week > div:nth-child(3), #week > div:nth-child(5) {
+  font-size: 18px;
+}
+#week > div:nth-child(4) {
+  font-size: 22px;
+}
+
+#weekContainer {
+  display: flex;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=style.css.map */

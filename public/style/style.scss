@@ -1,0 +1,282 @@
+$gray: #403D39;
+$accent: #EB5E28;
+$white: #eee;
+$floral: #FFFCF2;
+$smBreakpoint: 700px;
+*{
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500&display=swap');
+
+body{
+
+  font-family: 'Exo 2', sans-serif;
+  background-color: #CCC5B9;
+}
+
+.accent{
+  color: $accent;
+}
+
+.grad {
+  font-size: 40px;
+
+  background-image: linear-gradient(to bottom right, #e5de46, #c54e0a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+@media only screen and (max-width: $smBreakpoint) {
+    font-size: 40px;
+  }
+}
+
+
+body{
+  padding: 0px;
+  margin: 0px;
+}
+.container{
+
+}
+
+
+.date{
+  text-align: center;
+  padding: 10px;
+}
+.row{
+
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  @media only screen and (max-width: $smBreakpoint) {
+    flex-direction: column;
+  }
+
+}
+
+.left {
+  padding: 40px;
+  width: 60%;
+  background-color: $gray;
+  color: white;
+  display: flex;
+  justify-content: center;
+@media only screen and (max-width: $smBreakpoint) {
+    width: 100%;
+    padding: 15px 15px;
+  }
+  .centerBox{
+    width: 600px;
+    height: 90%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*makes center, this needs flex*/
+
+  @media only screen and (max-width: $smBreakpoint) {
+      width: 100%;
+      height: auto;
+
+    }
+  }
+  fieldset{
+    border: none;
+    //background-color: white;
+    padding: 0px;
+    display: flex;
+    height: 40px;
+  }
+
+  #addTodoList{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    input{
+      padding: 10px;
+      width: 100%;
+      border-radius: 4px;
+    }
+  }
+  #addTodoList{
+    width: 100%;
+    input[type=text]{
+
+      border: none;
+
+    }
+    input[type=submit]{
+
+      background: $accent;
+      border: none;
+      cursor: pointer;
+      color: $white;
+      max-width: 100px;
+      margin: 0 auto;
+      &:hover{
+        transition: all .2s ease-in-out;
+        background-color: $white;
+        color: $accent;
+      }
+    }
+  }
+
+
+}
+
+
+
+
+
+.right{
+  width: 40%;
+  height: 100%;
+  background-color: #CCC5B9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /*makes center, this needs flex*/
+
+  overflow-y: scroll;
+  @media only screen and (max-width: $smBreakpoint) {
+    width: 100%;
+    height: auto;
+  }
+  #output {
+    padding: 20px;
+    fieldset {
+      display: flex;
+      border: none;
+      justify-content: space-between;
+    }
+
+    label {
+
+    }
+
+    //input {
+    //
+    //
+    //}
+
+    img {
+      width: 15px;
+      margin-left: 10px;
+    }
+  }
+}
+#output{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.box{
+  border: solid 1px gray;
+  padding: 15px 20px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Exo 2', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h4{
+    margin:0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .circle{
+      width: 12px;
+      height: 12px;
+      border-radius: 10px;
+      border: solid 1px red;
+      background-color: transparent;
+    }
+  }
+  &.complete{
+    .circle{
+        border: solid 1px transparent;
+        background-image: linear-gradient(to right, #55ab55, #3ab73a);
+    }
+
+  }
+
+  .controls{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    img{
+      cursor: pointer;
+      mix-blend-mode: darken;
+    }
+  }
+
+  form{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin-bottom: 10px;
+    input{
+      padding: 5px;
+      border: solid 1px gray;
+      border-radius: 4px;
+      display: block;
+    }
+  }
+}
+
+
+
+#week{
+  display: flex;
+  margin: 0 auto;
+  > div{
+    //border: solid 1px gray;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 10px;
+    //gap: 4px;
+
+    align-items: center;
+    h4{
+      margin: 0px;
+    }
+    p{
+      margin: 0px;
+      margin-bottom: 6px;
+    }
+    .circle-red{
+      width: 12px;
+      height: 12px;
+      border-radius: 10px;
+      border: solid 1px red;
+      background-color: transparent;
+    }
+    .circle-green{
+      width: 12px;
+      height: 12px;
+      border-radius: 10px;
+      border: solid 1px lawngreen;
+      background-color: green;
+    }
+  }
+  > div:nth-child(1),  > div:nth-child(7){
+    font-size: 12px;
+  }
+  > div:nth-child(2),  > div:nth-child(6){
+    font-size: 16px;
+  }
+  > div:nth-child(3),  > div:nth-child(5){
+    font-size: 18px;
+  }
+  > div:nth-child(4){
+    font-size: 22px;
+  }
+}
+
+#weekContainer{
+  display: flex;
+  justify-content: center;
+}
+
