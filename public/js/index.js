@@ -88,6 +88,7 @@ function buildWeek(week){
         }
         dayBox.addEventListener("click", ()=>{
             targetDate = w.date
+            document.querySelector("#date").value = w.date;
             buildList(w.date);
         })
         document.querySelector("#week").appendChild(dayBox)
@@ -164,13 +165,17 @@ async function buildList(date){
 document.querySelector("#addTodoList").addEventListener("submit", async (e) => {
     console.log("create on date",  targetDate);
     e.preventDefault();
-    postService.createPost({
+    const result = await postService.createPost({
         title: e.target.title.value,
         //body: e.target.body.value,
         date: targetDate
     });
+    if(result.ok){
+        buildList(targetDate);
+    }
+    console.log("Add", result)
     e.target.title.value =  ""
-    buildList(targetDate);
+
 });
 
 
@@ -184,6 +189,5 @@ document.querySelector("#date").addEventListener("change", (e)=>{
 
 
 buildList(targetDate);
-
 
 

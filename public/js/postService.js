@@ -14,6 +14,7 @@ class PostService {
 
         })
         console.log("Post Created",response)
+        return response
     }
 
     async getPostByDate(date){
