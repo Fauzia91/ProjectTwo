@@ -135,7 +135,7 @@ async function buildList(date){
         editIcon.addEventListener("click", (e)=>{
             e.target.style.display = "none";
             myBox.querySelector('h4').style.display = "none";
-            myBox.querySelector('p').style.display = "none";
+            //myBox.querySelector('p').style.display = "none";
             saveIcon.style.display = "block";
             createEditForm(t.id, t.title, t.body);
 
